@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  	   <script type="text/javascript" src="assets/external/jquery-2.2.4.min.js"></script>
+      <link rel="stylesheet" href="assets/external/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+      <script type="text/javascript" src="assets/external/fancybox/jquery.fancybox.pack.js"></script>
+      <link rel="stylesheet" href="assets/external/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+      <script type="text/javascript" src="assets/external/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+      <script type="text/javascript" src="assets/external/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+      <link rel="stylesheet" href="assets/external/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+      <script type="text/javascript" src="assets/external/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+  	   <script src="assets/api.js"></script>
+       <script src="assets/utils.js"></script>
+       <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type='text/javascript'>
+		    function LoadGoogle()
+		    {
+		        if(typeof google != 'undefined' && google && google.load)
+		        {
+		            // Now you can use google.load() here...
+		        }
+		        else
+		        {
+		            // Retry later...
+		            setTimeout(LoadGoogle, 30);
+		        }
+		    }
+
+		    LoadGoogle();
+		</script>
+  	   <script src="assets/external/loader.js"></script>
+  	   <script src="assets/graph.js"></script>
+  </head>
+
+  <body>
+  <div id="chart_div"></div>
+  </body>
+  </html>
+
+
+

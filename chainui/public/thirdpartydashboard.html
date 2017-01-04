@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<meta name="robots" content="noindex">
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="assets/external/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/demo.css">
+    <link href="assets/external/angular-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="assets/external/jquery-2.2.4.min.js"></script>
+    <script src="assets/external/api-check.js"></script>
+    <script src="assets/external/angular.min.js"></script>
+    <script src="assets/external/angular-datepicker.min.js"></script>
+    <script src="assets/external/formly.js"></script>
+    <script src="assets/external/angular-formly-templates-bootstrap.js"></script>
+    <script type="text/javascript" src="assets/external/bootstrap.min.js"></script>
+    <script lang="javascript" src="assets/external/xlsx.core.min.js"></script>
+
+    <link rel="stylesheet" href="assets/external/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="assets/external/fancybox/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="assets/external/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="assets/external/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <script type="text/javascript" src="assets/external/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+    <link rel="stylesheet" href="assets/external/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+    <script type="text/javascript" src="assets/external/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+
+    <script src="assets/app.js"></script>
+    <script src="assets/api.js"></script>
+    <script src="assets/utils.js"></script>
+
+    <script src="assets/external/loader.js"></script>
+
+    <title>Blockchain Proof of Concept :: ANZ - Wells Fargo</title>
+
+
+</head>
+
+<body ng-app="formlyExample" ng-controller="MainCtrl as vm" >
+    <div class="container-fluid">
+        <div class="row">
+            <header>
+
+                <h1 style="color:#039BD3">Bank of America View of <span style="color:#F9BB0D"></span> Blockchain</h1>
+            </header>
+            <div class="subheader row wfBg">
+                <div class="pull-left"><span id="myBank" style="color:#F9BB0D">Wells Fargo</span> Blockchain View</div>
+                <div class="pull-right"><a id='signOff' style="color:#fff;cursor: pointer" href="index.html">Sign Out</a></div>
+            </div>
+
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs center-block" role="tablist" id="theTabs">
+                <li role="presentation" style="display:none"><a href="#thirdpartydashboard" id="thirdpartydashboard-tab" aria-controls="thirdpartydashboard" role="tab" data-toggle="tab">Dashboard<br />&nbsp;</a></li>
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content ">
+                <div role="tabpanel" class="tab-pane fade" id="thirdpartydashboard" aria-labelledby="thirdpartydashboard-tab">
+                    <!-- Search Transactions Section -->
+                    <div id="groupSearch">
+
+                        <h3 style="color:#cd1309">All Transactions</h3>
+
+                        <p id="searchTransactionsMessage"><i></i></p>
+                        <table id="searchTransactions" border ="2" class="table table-striped">
+                            <tr>
+                                <th style="padding: 10px">Transaction Type</th>
+                                <th style="padding: 10px">Key</th>
+                                <th style="padding: 10px">Reference Key</th>
+                                <th style="padding: 10px">Ordering Institution</th>
+                                <th style="padding: 10px">Account with Institution</th>
+                                <th style="padding: 10px">Payment Amount</th>
+                                <th style="padding: 10px">Timestamp Created</th>
+                                <th style="padding: 10px">Timestamp Confirmed</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+            $(function(){
+                $('#theTabs a:first').tab('show')
+                $('#theTabs a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                })
+
+                userType = localStorage.bankName;
+                if (userType == BANK_NAME_BA) {
+                    $( "#myBank" ).html("Bank of America").addClass('boaBg');
+                    $( ".subheader" ).toggleClass( 'boaBg', true );
+                    $( "div[id*='ANZ']" ).hide(); //hides all ANZ tables when logged in as WF
+                    loadThirdPartyDashboard();
+                }
+
+            });
+
+
+        </script>
+    <script type="text/javascript">
+        $("#searchTrnThirdParty").click(function(){
+            searchTransactions();
+        });
+        $('#signOff').click(function(){
+            window.location = '/';
+        });
+    </script>
+</body>
+
+</html>

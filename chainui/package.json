@@ -1,0 +1,31 @@
+{
+  "name": "wellsfargobcnostro",
+  "version": "1.0.0",
+  "description": "UI for Nostro Recon Blockchain",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "multer": "^1.2.0",
+    "cfenv": "^1.0.0"
+  },
+  "engines": {
+     "node": "4.2.4",
+     "npm": "2.11.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "4.4.2",
+    "npm": "2.11.3"
+  },
+  "author": "Wells Fargo ANZ",
+  "license": "ISC"
+}
